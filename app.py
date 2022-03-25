@@ -19,7 +19,7 @@ mean_value=np.mean(Data["user rating score"])
 Data["user rating score"].fillna(value=mean_value, inplace=True)
 
 le=preprocessing.LabelEncoder()
-Data["rating"]=le.fit_transform(Data["rating"])
+
 
 Data["ratingLevel"].fillna(value="Parents strongly cautioned. May be unsuitable for children ages 14 and under.", inplace=True)
 
