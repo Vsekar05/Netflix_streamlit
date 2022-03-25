@@ -97,10 +97,12 @@ st.set_page_config(
     page_icon="https://miro.medium.com/max/807/1*uxkCLCVoxLJlkoPTFDoMLg.jpeg",
     layout="centered", initial_sidebar_state="auto"
 )
-rating_level=st.text_input(label="Give the rating level",value="",max_chars=200, key=None, type="default",
-              placeholder=None, disabled=False)
-st.write('The rating for the given movie is',model.predict(rating_level))
+rating_level=[st.text_input(label="Give the rating level",value="",max_chars=200, key=None, type="default",
+              placeholder=None, disabled=False)]
+Rating=model.predict(rating_level)
+st.write('The rating for the given movie is',Rating)
 Show_name=st.text_input(label="Give the show title",value="",max_chars=200, key=None, type="default",
               placeholder=None, disabled=False)
+Recomended_movies=get_show_recommendation(Show_name)
  
-st.write("The shows which are similar in rating as the show which you have given are",get_show_recommendation(Show_name))
+st.write("The shows which are similar in rating as the show which you have given are",Recomended_movies)
